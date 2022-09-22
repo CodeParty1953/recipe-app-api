@@ -21,7 +21,7 @@ ARG DEV=false
 #look at video "15. Create Docker File for project" from "Build a Backend REST API with Python and Django Ad"
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
-    apk add --update --no-cache postgresql-client jpeg-dev && \
+    apk add --update --no-cache postgresql-client && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev && \
     /py/bin/pip install -r /tmp/requirements.txt && \
@@ -35,6 +35,6 @@ RUN python -m venv /py && \
         --no-create-home \
         django-user
 
-ENV PATH="/scripts:/py/bin:$PATH"
+ENV PATH="/py/bin:$PATH"
 
 USER django-user
