@@ -1,10 +1,10 @@
 """
-Sample test case 
+Sample test case
 """
 
 from django.test import SimpleTestCase
 
-from app import calc 
+from app import calc
 
 
 class CalcTests(SimpleTestCase):
@@ -14,4 +14,4 @@ class CalcTests(SimpleTestCase):
         """Test adding numbers togather"""
         res = calc.add(5, 6)
 
-        self.assertEqual(res,11)
+        self.assertEqual(res, 11)
